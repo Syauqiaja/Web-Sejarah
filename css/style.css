@@ -112,6 +112,10 @@ body footer{
   background-size: contain;
   background-repeat: no-repeat;
 }
+.btn-image .disabled{
+  background-color: rgba(0, 0, 0, 0.305);
+  background-blend-mode: multiply;
+}
 .btn-left{
   background-image: url("../images/btn_to_left.png");
 }
