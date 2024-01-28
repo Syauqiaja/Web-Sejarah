@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Hindu Budha di Indonesia</title>
+    <style>
+        body.background-home {
+            margin: 0;
+            padding: 100px 0px;
+            background-color: brown;
+            /* Set the image as the background */
+            background-image: url('images/base_background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh; /* Stretch the background in the y-direction based on screen height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+        }
+        .background-maps{
+            position: absolute;
+            height: 100%;
+            width: 85%;
+            object-fit: contain;
+        }
+
+        .content-container {
+            height: 512px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 20px; /* Add margin to create space between the image and button */
+        }
+
+        .content-container img{
+            position: absolute;
+            object-fit: contain;
+        }
+        
+        .content-container img:nth-child(2){
+            top: 250px;
+            z-index: 1;
+        }
+
+        .image-button {
+            /* Set the background image for the button */
+            background-image: url('images/btn_mulai.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: transparent;
+            /* Set the width and height of the button based on your image size */
+            width: 200px;
+            height: 50px;
+            /* Remove default button styles */
+            border: none;
+            padding: 100px 25px;
+            margin: 0;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel .button-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel content {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            outline: none;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-btn:hover {
+            background-color: #555;
+        }
+
+        .prev {
+            left: 0px;
+        }
+
+        .next {
+            right: 0px;
+        }   
+    </style>
+</head>
+<body class="background-home">
+    <img class="background-maps" src="images/map.png" height="100%" width="100%"/>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <div class="content">
+                    <div class="content-container">
+                        <img src="images/img_hindu_budha.png" alt="Hindu Budha Image" height="600px" width="600px"/>
+                    </div>
+                    <div class="button-container">
+                        <a class="image-button" href="views/jelajah/awal.html"></a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <div class="carousel-item">
+                <div class="content">
+                    <div class="content-container">
+                        <img src="images/img_pariwisata.png" alt="Pariwisata Image" height="600px" width="600px"/>
+                        <img src="images/headline_pariwisata.png" alt="Headline Pariwisata" height="300px" width="600px"/>
+                    </div>
+                    <div class="button-container">
+                        <button class="image-button"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="content">
+                    <div class="content-container">
+                        <img src="images/img_pergerakan_nasional.png" alt="Pergerakan Nasional Image" height="600px" width="600px"/>
+                        <img src="images/headline_sejarah_pergerakan.png" alt="Headline Pergerakan Nasional" height="300px" width="600px"/>
+
+                    </div>
+                    <div class="button-container">
+                        <button class="image-button"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <script>
+        let currentSlide = 0;
+      
+        function showSlide() {
+          const carousel = document.querySelector('.carousel');
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+      
+        function nextSlide() {
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          currentSlide = (currentSlide + 1) % totalSlides;
+          showSlide();
+        }
+      
+        function prevSlide() {
+          const totalSlides = document.querySelectorAll('.carousel-item').length;
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+          showSlide();
+        }
+      </script>
+</body>
+</html>

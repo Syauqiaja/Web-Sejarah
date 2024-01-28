@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F3EDC8;
+  min-height: 100vh; /* Set a minimum height of the viewport */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+header, footer {
+  height: 64px;
+  background-repeat: no-repeat;
+  width: 100%; /* You can set your own background color */
+}
+
+body header{
+  height: 64px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-image: url("../images/img_header.png");
+}
+body footer{
+  height: 64px;
+  background-repeat: no-repeat;
+  width: 100%;
+  background-image: url("../images/img_footer.png");
+}        
+.background-maps{
+  position: fixed;
+  height: 100%;
+  width: 95%;
+  object-fit: contain;
+  z-index: -1;
+}
+.scrolling-list{
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.scroll-container{
+  width: 720px;
+  height: 210px;
+  background-image: url("../images/img_scrolls.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Use the default text color */
+  cursor: pointer;
+}
+.scroll-container:hover {
+  text-decoration: underline; /* Add underline on hover if desired */
+}
+.scroll-container span{
+  width: 100%;
+  margin: 0px 48px;
+  text-align: center;
+  color: #65451F;
+  font-size: 32px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.scrolling-content{
+  background-image: url("../images/img_scroll_content_medium.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  margin: auto;
+  height: 100%;
+  padding-top: 64px;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+.scrolling-content .image-frame{
+  margin: auto;
+  width: 749px;
+  height: 473px;
+  background-image: url("../images/img_frame.png");
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-content p{
+  font-size: 24px;
+  margin-left: 180px;
+  margin-right: 128px;
+  text-align: justify;
+  font-family: 'Courier New', Courier, monospace;
+  color: #65451F;
+}
+
+.image-frame img{
+  width: 574px;
+  height: 328px;
+  box-sizing: content-box;
+  margin: auto;
+}
+.nav-container{
+  display: flex;
+  flex-flow: row;
+  position: fixed;
+  top: 64px;
+  right: 128px;  
+}
+.btn-image{
+  padding: 24px 38px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.btn-left{
+  background-image: url("../images/btn_to_left.png");
+}
+.btn-right{
+  background-image: url("../images/btn_to_right.png");
+}
