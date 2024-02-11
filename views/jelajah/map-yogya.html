@@ -125,9 +125,21 @@
     </header>
     <div class="maps-container">
         <div class="maps-riau">
-            <img src="../../images/pin.png" alt="" style="top: 170px; left: 300px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-ratu-boko')">
-            <img src="../../images/pin.png" alt="" style="top: 220px; left: 310px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-kalasan')">
-            <img src="../../images/pin.png" alt="" style="top: 140px; left: 300px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-prambanan')">
+            <img src="../../images/pin.png" alt="" style="top: 170px; left: 300px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-ratu-boko')"
+                onmouseenter="showMap('dialog-candi-ratu-boko')"
+                onmouseleave="hideMap('dialog-candi-ratu-boko')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 220px; left: 310px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-kalasan')"
+                onmouseenter="showMap('dialog-candi-kalasan')"
+                onmouseleave="hideMap('dialog-candi-kalasan')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 140px; left: 300px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-prambanan')"
+                onmouseenter="showMap('dialog-candi-prambanan')"
+                onmouseleave="hideMap('dialog-candi-prambanan')"
+            >
 
             <div style="top: -120px; left: 50px;" id="dialog-candi-ratu-boko" class="map-dialog">
                 <div class="dialog-image">
@@ -152,17 +164,6 @@
             </div>
         </div>
     </div>
-    <script>
-        let currentSlide = 0;
-
-        function showMap(loc){
-            const dialogBoxes = document.querySelectorAll('.map-dialog');
-            dialogBoxes.forEach(dialog => {
-                dialog.style.visibility = 'hidden';
-            });
-
-            document.getElementById(loc).style.visibility = 'visible';
-        }
-      </script>
+    <script src="../../js/maps.js"></script>
 </body>
 </html>

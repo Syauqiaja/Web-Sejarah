@@ -125,7 +125,11 @@
     </header>
     <div class="maps-container">
         <div class="maps-riau">
-            <img src="../../images/pin.png" alt="" style="top: 270px; left: 600px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-jambi')">
+            <img src="../../images/pin.png" alt="" style="top: 270px; left: 600px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-jambi')"
+                onmouseenter="showMap('dialog-candi-jambi')"
+                onmouseleave="hideMap('dialog-candi-jambi')"
+            >
         </div>
         <div style="top: -680px; left: 360px;" id="dialog-candi-jambi" class="map-dialog">
             <div class="dialog-image">
@@ -135,17 +139,6 @@
             <a class="btn-brown" href="candi-muara-jambi.html">Candi Muara Jambi</a>
         </div>
     </div>
-    <script>
-        let currentSlide = 0;
-
-        function showMap(loc){
-            const dialogBoxes = document.querySelectorAll('.map-dialog');
-            dialogBoxes.forEach(dialog => {
-                dialog.style.visibility = 'hidden';
-            });
-
-            document.getElementById(loc).style.visibility = 'visible';
-        }
-      </script>
+    <script src="../../js/maps.js"></script>
 </body>
 </html>

@@ -125,17 +125,36 @@
     </header>
     <div class="maps-container">
         <div class="maps-riau">
-            <img src="../../images/pin.png" alt="" style="top: 290px; left: 240px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-arjuna')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 290px; left: 240px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-semar')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 330px; left: 180px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-dieng')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 280px; left: 320px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-gedong')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 350px; left: 210px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-mendut')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 340px; left: 215px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-borobudur')">
+            <img src="../../images/pin.png" alt="" style="top: 290px; left: 240px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-arjuna')"
+                onmouseenter="showMap('dialog-candi-arjuna')"
+                onmouseleave="hideMap('dialog-candi-arjuna')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 290px; left: 240px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-semar')"
+                onmouseenter="showMap('dialog-candi-semar')"
+                onmouseleave="hideMap('dialog-candi-semar')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 330px; left: 180px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-dieng')"
+                onmouseenter="showMap('dialog-candi-dieng')"
+                onmouseleave="hideMap('dialog-candi-dieng')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 280px; left: 320px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-gedong')"
+                onmouseenter="showMap('dialog-candi-gedong')"
+                onmouseleave="hideMap('dialog-candi-gedong')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 350px; left: 210px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-mendut')"
+                onmouseenter="showMap('dialog-candi-mendut')"
+                onmouseleave="hideMap('dialog-candi-mendut')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 340px; left: 215px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-borobudur')"
+                onmouseenter="showMap('dialog-candi-borobudur')"
+                onmouseleave="hideMap('dialog-candi-borobudur')"
+            >
 
 
             <div style="top: 0px; left: -0px;" id="dialog-candi-arjuna" class="map-dialog">
@@ -184,17 +203,6 @@
             </div>
         </div>
     </div>
-    <script>
-        let currentSlide = 0;
-
-        function showMap(loc){
-            const dialogBoxes = document.querySelectorAll('.map-dialog');
-            dialogBoxes.forEach(dialog => {
-                dialog.style.visibility = 'hidden';
-            });
-
-            document.getElementById(loc).style.visibility = 'visible';
-        }
-      </script>
+    <script src="../../js/maps.js"></script>
 </body>
 </html>

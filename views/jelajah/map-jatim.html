@@ -125,16 +125,31 @@
     </header>
     <div class="maps-container">
         <div class="maps-riau">
-            <img src="../../images/pin.png" alt="" style="top: 310px; left: 265px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-kidal')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 330px; left: 250px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-singosari')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 430px; left: 460px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-deres')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 400px; left: 120px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-penataran')">
-            
-            <img src="../../images/pin.png" alt="" style="top: 380px; left: 115px;" class="pin" tabindex="0" onclick="showMap('dialog-candi-sawentar')">
-
+            <img src="../../images/pin.png" alt="" style="top: 310px; left: 265px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-kidal')"
+                onmouseenter="showMap('dialog-candi-kidal')"
+                onmouseleave="hideMap('dialog-candi-kidal')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 330px; left: 250px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-singosari')"
+                onmouseenter="showMap('dialog-candi-singosari')"
+                onmouseleave="hideMap('dialog-candi-singosari')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 430px; left: 460px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-deres')"
+                onmouseenter="showMap('dialog-candi-deres')"
+                onmouseleave="hideMap('dialog-candi-deres')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 400px; left: 120px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-penataran')"
+                onmouseenter="showMap('dialog-candi-penataran')"
+                onmouseleave="hideMap('dialog-candi-penataran')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 380px; left: 115px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-candi-sawentar')"
+                onmouseenter="showMap('dialog-candi-sawentar')"
+                onmouseleave="hideMap('dialog-candi-sawentar')"
+            >
 
             <div style="top: 20px; left: 150px;" id="dialog-candi-kidal" class="map-dialog">
                 <div class="dialog-image">
@@ -175,17 +190,6 @@
             </div>
         </div>
     </div>
-    <script>
-        let currentSlide = 0;
-
-        function showMap(loc){
-            const dialogBoxes = document.querySelectorAll('.map-dialog');
-            dialogBoxes.forEach(dialog => {
-                dialog.style.visibility = 'hidden';
-            });
-
-            document.getElementById(loc).style.visibility = 'visible';
-        }
-      </script>
+    <script src="../../js/maps.js"></script>
 </body>
 </html>
