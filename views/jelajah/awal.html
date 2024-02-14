@@ -7,7 +7,7 @@
     <style>
         body.background-home {
             margin: 0;
-            padding: 100px 0px;
+            padding: 20px 0px;
             background-color: rgb(55, 33, 6);
             /* Set the image as the background */
             background-image: url('../../images/base_background.png');
@@ -102,10 +102,60 @@
         }
         .btn-brown:hover{
             background-color: #4a2a08;
-        } 
+        }
+        
+        .scroll-container{
+            width: 512px;
+            height: 128px;
+          background-image: url("../../images/img_scrolls.png");
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          align-items: center;
+          text-decoration: none; /* Remove underline */
+          color: inherit; /* Use the default text color */
+          cursor: pointer;
+        }
+        .scroll-container span{
+          width: 100%;
+          margin: 0px 48px;
+          text-align: center;
+          color: #65451F;
+          font-size: 32px;
+          font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .nav-container{
+          display: flex;
+          flex-flow: row;
+          position: fixed;
+          top: 64px;
+          left: 128px;  
+        }
+        .btn-image{
+          padding: 24px 38px;
+          background-size: contain;
+          background-repeat: no-repeat;
+        }
+        .btn-image .disabled{
+          background-color: rgba(0, 0, 0, 0.305);
+          background-blend-mode: multiply;
+        }
+        .btn-left{
+          background-image: url("../../images/btn-left-yellow.png");
+        }
     </style>
 </head>
 <body class="background-home">
+    <header>
+        <div class="nav-container">
+            <a class="btn-image btn-left" href="../../index.html"></a>
+        </div>
+        <a class="scroll-container" style="margin-left: auto; margin-right: auto; margin-bottom: 32px;">
+            <span>Peta Indonesia</span>
+        </a>
+    </header>
     <div class="maps-container">
         <div class="maps-indonesia">
             <img src="../../images/ID-RI.png" style="top: 130px; left: 132px;" class="map-active" tabindex="0" 

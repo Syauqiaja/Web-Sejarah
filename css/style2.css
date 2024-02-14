@@ -30,9 +30,6 @@ body{
     color: inherit; /* Use the default text color */
     cursor: pointer;
   }
-  .scroll-container:hover {
-    text-decoration: underline; /* Add underline on hover if desired */
-  }
   .scroll-container span{
     width: 100%;
     margin: auto 48px;

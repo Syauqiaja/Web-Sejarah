@@ -3,43 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
-    <title>Pariwisata Home</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style2.css"/>
+    <title>Jelajah Hindu Budha di Indonesia</title>
+    <style>
+        body.background-home {
+            margin: 0;
+            padding: 100px 0px;
+            background-color: rgb(55, 33, 6);
+            /* Set the image as the background */
+            background-image: url('../../images/base_background.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh; /* Stretch the background in the y-direction based on screen height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+        }
+        .background-maps{
+            position: absolute;
+            height: 100%;
+            width: 85%;
+            object-fit: contain;
+        }
+
+        .prev {
+            left: 0px;
+        }
+
+        .next {
+            right: 0px;
+        }
+        .maps-riau{
+            position: initial;
+            top: 180px;
+            left: 130px;
+            width: 1000px;
+            height: 719px;
+            background-image: url("../../images/BIG-JI.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .maps-riau img{
+            position: relative;
+        }
+        .pin{
+            width: 32px;
+            height: 48px;
+            filter: brightness(100%);
+        }
+        .pin:hover{
+            filter: brightness(80%);
+        }
+        .pin:focus{
+            filter: brightness(70%);
+        }
+        .map-dialog{
+            position: relative;
+            width: 254px;
+            height: 230px;
+            visibility: hidden;
+            background-color: #65451F;
+            border-radius: 15px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+        }
+        .map-dialog .dialog-image{
+            margin-top: 8px;
+            position: relative;
+            align-self: center;
+            height: 161px;
+            width: 240px;
+            display: flex;
+            flex-direction: column;
+        }
+        .dialog-image .image-content{
+            position: absolute;
+            margin-top: 24px;
+            margin-bottom: auto;
+            align-self: center;
+            box-sizing: content-box;
+            width: 180px;
+            height: 110px;
+        }
+        .dialog-image .image-frame{
+            position: absolute;
+            margin-top: auto;
+            margin-bottom: auto;
+            align-self: center;
+            height: 161px;
+            width: 240px;
+        }
+        .btn-brown{
+            align-self: center;
+            background-color: #3F2305;
+            border-radius: 8px;
+            display: block;
+            padding: 8px 0px;
+            text-align: center;
+            width: 230px;
+            color: white;
+            font-size: 20px;
+        }
+        .btn-brown:hover{
+            background-color: #4a2a08;
+        }
+    </style>
 </head>
-<body>
-    <img src="../../images/map.png" class="background-maps" alt="map background image"/>
+<body class="background-home">
     <header>
         <div class="nav-container">
-            <a class="btn-image btn-left" href="../../index.html"></a>
+            <a class="btn-image btn-left" href="awal.html"></a>
         </div>
+        
+        <a class="scroll-container" style="margin-left: auto; margin-right: auto; margin-top: 64px;">
+            <span>Jawa Timur</span>
+        </a>
     </header>
-    <div class="scrolling-list">
-        <a class="scroll-container" href="bab-1-1.html">
-            <span>Pengertian Nasionalisme dan Pertumbuhan Nasionalisme di Indonesia</span>
-        </a>
-        <a class="scroll-container" href="bab-2-1.html">
-            <span>Munculnya Organisasi-Organisasi di Awal Pergerakan Nasional</span>
-        </a>
-        <a class="scroll-container" href="bab-3-1.html">
-            <span>Perkembangan Organisasi Keagamaan Pada Masa Pergerakan Nasional</span>
-        </a>
-        <a class="scroll-container" href="bab-4-1.html">
-            <span>Organisasi Pergerakan Nasional Indonesia</span>
-        </a>
-        <a class="scroll-container" href="bab-5-1.html">
-            <span>Menganalisis Perkembangan Pergerakan Nasional 1926</span>
-        </a>
-        <a class="scroll-container" href="bab-6-1.html">
-            <span>Pergerakan Wanita Masa Pergerakan Nasional</span>
-        </a>
-        <a class="scroll-container" href="bab-7-1.html">
-            <span>Sumpah Pemuda</span>
-        </a>
-        <a class="scroll-container" href="bab-8-1.html">
-            <span>Kegiatan Dalam Upaya Menyatukan Perjuangan Bangsa</span>
-        </a>
+    <div class="maps-container">
+        <div class="maps-riau">
+            <img src="../../images/pin.png" alt="" style="top: 400px; left: 580px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-lumajang')"
+                onmouseenter="showMap('dialog-lumajang')"
+                onmouseleave="hideMap('dialog-lumajang')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 300px; left:695px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-situbondo')"
+                onmouseenter="showMap('dialog-situbondo')"
+                onmouseleave="hideMap('dialog-situbondo')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 350px; left: 740px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-bondowoso')"
+                onmouseenter="showMap('dialog-bondowoso')"
+                onmouseleave="hideMap('dialog-bondowoso')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 450px; left: 770px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-banyuwangi')"
+                onmouseenter="showMap('dialog-banyuwangi')"
+                onmouseleave="hideMap('dialog-banyuwangi')"
+            >
+            <img src="../../images/pin.png" alt="" style="top: 430px; left: 580px;" class="pin" tabindex="0" 
+                onclick="lockMap('dialog-jember')"
+                onmouseenter="showMap('dialog-jember')"
+                onmouseleave="hideMap('dialog-jember')"
+            >
+
+            <div style="top: 120px; left: 350px;" id="dialog-lumajang" class="map-dialog">
+                <div class="dialog-image">
+                    <img src="../../images/img-base-lumajang.png" class="image-content"/>
+                    <img src="../../images/dialog-border-brown.png" class="image-frame"/>
+                </div>
+                <a class="btn-brown" href="base-lumajang.html">Lumajang</a>
+            </div>
+    
+            <div style="top: -210px; left: 500px;" id="dialog-situbondo" class="map-dialog">
+                <div class="dialog-image">
+                    <img src="../../images/img-base-situbondo.png" class="image-content"/>
+                    <img src="../../images/dialog-border-brown.png" class="image-frame"/>
+                </div>
+                <a class="btn-brown" href="base-situbondo.html">Situbondo</a>
+            </div>
+
+            <div style="top: -390px; left: 820px;" id="dialog-bondowoso" class="map-dialog">
+                <div class="dialog-image">
+                    <img src="../../images/img-base-bondowoso.png" class="image-content"/>
+                    <img src="../../images/dialog-border-brown.png" class="image-frame"/>
+                </div>
+                <a class="btn-brown" href="base-bondowoso.html">Bondowoso</a>
+            </div>
+            <div style="top: -280px; left: 900px;" id="dialog-banyuwangi" class="map-dialog">
+                <div class="dialog-image">
+                    <img src="../../images/img-base-banyuwangi.png" class="image-content"/>
+                    <img src="../../images/dialog-border-brown.png" class="image-frame"/>
+                </div>
+                <a class="btn-brown" href="base-banyuwangi.html">Banyuwangi</a>
+            </div>
+            <div style="top: -520px; left: 480px;" id="dialog-jember" class="map-dialog">
+                <div class="dialog-image">
+                    <img src="../../images/img-base-jember.png" class="image-content"/>
+                    <img src="../../images/dialog-border-brown.png" class="image-frame"/>
+                </div>
+                <a class="btn-brown" href="base-jember.html">Jember</a>
+            </div>
+        </div>
     </div>
-    <footer>
-    </footer>
+    <script src="../../js/maps.js"></script>
 </body>
 </html>
