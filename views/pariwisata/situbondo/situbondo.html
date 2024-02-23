@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jelajah Hindu Budha di Indonesia</title>
+    <style>
+        body.background-home {
+            margin: 0;
+            padding: 100px 0px;
+            background-color: rgb(55, 33, 6);
+            /* Set the image as the background */
+            background-image: url('../../../images/bg-materi-3.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 80vh; /* Stretch the background in the y-direction based on screen height */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            position: relative;
+        }
+
+        .prev {
+            left: 0px;
+        }
+
+        .next {
+            right: 0px;
+        }
+        .btn-brown{
+            align-self: center;
+            background-color: #3F2305;
+            border-radius: 8px;
+            display: block;
+            padding: 8px 0px;
+            text-align: center;
+            width: 230px;
+            color: white;
+            font-size: 20px;
+        }
+        .btn-brown:hover{
+            background-color: #4a2a08;
+        }
+        #bound-kiri{
+            height: 100%;
+            position: absolute;
+            left: 0px;
+        }
+        
+        #bound-kanan{
+            height: 100%;
+            position: absolute;
+            right: 0px;
+        }
+        .title-box{
+            width: 689px;
+            height: 303px;
+            
+            padding: 64px 64px;
+            background-image: url("../../../images/banner-materi-3.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            align-content: center;
+        }
+        .title-text{
+            display: block;
+            margin: auto 0px;
+            font-size: 48px;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .btn-image{
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 44px;
+        }
+        .btn-left{
+            background-image: url("../../../images/btn-left-red.png");
+        }
+        
+        .btn-right{
+            background-image: url("../../../images/btn-right-red.png");
+        }
+    </style>
+</head>
+<body class="background-home">
+    <img src="../../../images/bound-kiri.png" alt="bound kiri" id="bound-kiri"/>
+    <img src="../../../images/bound-kanan.png" alt="bound kanan" id="bound-kanan"/>
+    <div class="title-box">
+        <div class="title-text">
+            Pariwisata Sejarah dan Budaya Kota Situbondo
+        </div>
+    </div>
+    <div class="nav-container">
+        <a class="btn-image btn-left" href="../awal.html"> </a>
+        <div style="width: 48px;"></div>
+        <a class="btn-image btn-right" href="1.html"> </a>
+    </div>
+    <script src="../../js/maps.js"></script>
+</body>
+</html>
